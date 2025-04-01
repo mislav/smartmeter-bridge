@@ -10,7 +10,7 @@ $ ./smartmeter-bridge-linux-arm64 -serial /dev/ttyUSB0 -tcp 9988
 ```
 
 This is useful, for example, to relay data from a P1 port of a DSMR smart meter for house utilities (electricity and gas)
-to a remote machine on the same network; for example one running Home Assistant that aggregates data related to energy usage.
+to a remote machine on the same network; for example one running [Home Assistant][ha] that aggregates data related to energy usage.
 
 ```mermaid
 flowchart LR
@@ -28,3 +28,6 @@ This has only been tested with DSMR v5.
 
 Ser2net offers a lot more features than are needed in this particular use-case. Smart Meter Bridge is written in Go 
 which allows it to be compiled to a single executable file that can run without dependencies.
+
+
+  [ha]: https://www.home-assistant.io/integrations/dsmr/

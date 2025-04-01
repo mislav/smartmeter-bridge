@@ -12,6 +12,13 @@ $ ./smartmeter-bridge-linux-arm64 -serial /dev/ttyUSB0 -tcp 9988
 This is useful, for example, to relay data from a P1 port of a DSMR smart meter for house utilities (electricity and gas)
 to a remote machine on the same network; for example one running Home Assistant that aggregates data related to energy usage.
 
+```mermaid
+flowchart LR
+    meter(House electricity meter) -->|P1 port over USB| bridge(Computer running this bridge)
+    bridge -->|TCP| client1(Home Assistant)
+    bridge -->|TCP| client2(another client)
+```
+
 The code in this repo is inspired by https://github.com/legolasbo/smartmeterBridge, but has been rewritten from the
 ground up to have no depedencies, no YAML configuration, better signal and error handling, and context cancellation.
 
